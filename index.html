@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="nl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ochtendnieuws B1</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+<style>
+/* Layout: one calm reading column, a newspaper morning edition; highlighter-yellow marks the words to learn */
+:root {
+  --bg: #f3f5f7;
+  --paper: #ffffff;
+  --ink: #18212b;
+  --muted: #5b6774;
+  --line: #dde3e9;
+  --accent: #1d5a86;
+  --mark: #ffe27a;
+  --mark-ink: #18212b;
+  --font-display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --font-body: "Literata", Georgia, "Times New Roman", serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #11161c; --paper: #18202a; --ink: #e6ebf0; --muted: #9aa7b4;
+    --line: #2a3542; --accent: #7fb6e0; --mark: #6b5a12; --mark-ink: #fff6cf;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #11161c; --paper: #18202a; --ink: #e6ebf0; --muted: #9aa7b4;
+  --line: #2a3542; --accent: #7fb6e0; --mark: #6b5a12; --mark-ink: #fff6cf;
+  color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:border-box}
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--ink);
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.65;
+  padding-left: max(16px, env(safe-area-inset-left, 0px));
+  padding-right: max(16px, env(safe-area-inset-right, 0px));
+  padding-block: 28px 56px;
+}
+.wrap { max-width: 680px; margin: 0 auto; display: flex; flex-direction: column; gap: 28px; }
+header { display: flex; flex-direction: column; gap: 6px; padding-bottom: 18px; border-bottom: 2px solid var(--ink); }
+.eyebrow { font-family: var(--font-display); font-size: 13px; letter-spacing: .08em; text-transform: uppercase; color: var(--accent); font-weight: 700; }
+h1 { font-family: var(--font-display); font-weight: 700; font-size: clamp(30px, 6vw, 42px); line-height: 1.1; margin: 0; text-wrap: balance; }
+.intro { color: var(--muted); font-size: 15px; margin: 4px 0 0; }
+article { background: var(--paper); border: 1px solid var(--line); border-radius: 10px; padding: 24px clamp(18px, 4vw, 30px); display: flex; flex-direction: column; gap: 14px; }
+.cat { font-family: var(--font-display); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); font-weight: 700; }
+h2 { font-family: var(--font-display); font-weight: 700; font-size: 24px; line-height: 1.2; margin: 0; text-wrap: balance; }
+article p { margin: 0; }
+mark { background: var(--mark); color: var(--mark-ink); padding: 0 .2em; border-radius: 3px; font-weight: 600; }
+.source { font-family: var(--font-display); font-size: 14px; }
+a { color: var(--accent); text-underline-offset: 3px; }
+a:focus-visible, summary:focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 3px; }
+h3 { font-family: var(--font-display); font-size: 14px; letter-spacing: .06em; text-transform: uppercase; margin: 8px 0 0; color: var(--accent); }
+dl { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+dl div { display: flex; flex-direction: column; padding: 8px 0; border-top: 1px solid var(--line); }
+dt { font-weight: 600; }
+dd { margin: 0; font-size: 15.5px; }
+dd em { color: var(--muted); }
+ol.q { margin: 0; padding-left: 1.3em; display: flex; flex-direction: column; gap: 10px; }
+ol.q ul { list-style: none; padding: 0; margin: 4px 0 0; font-size: 15.5px; color: var(--muted); }
+.answers { background: var(--paper); border: 1px dashed var(--line); border-radius: 10px; padding: 18px clamp(18px, 4vw, 30px); }
+.answers summary { font-family: var(--font-display); font-weight: 700; cursor: pointer; font-size: 18px; }
+.answers h4 { font-family: var(--font-display); margin: 16px 0 4px; font-size: 15px; }
+.answers ol { margin: 0; padding-left: 1.3em; font-size: 15.5px; }
+footer { color: var(--muted); font-size: 13px; font-family: var(--font-display); text-align: center; }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+<!--EDITIE-START-->
+<header>
+  <span class="eyebrow">Ochtendnieuws · niveau B1</span>
+  <h1>dinsdag 27 oktober 2026</h1>
+  <p class="intro">Drie berichten van de NOS in makkelijk Nederlands. De gele woorden worden uitgelegd onder elk bericht.</p>
+</header>
+
+<article>
+  <span class="cat">Rotterdam · Wonen</span>
+  <h2>Huur in Rotterdam is vaak nog te hoog</h2>
+  <p>Sinds juli 2024 is er een nieuwe wet voor huurwoningen. Met een puntensysteem kun je zien wat de hoogste huur voor een woning mag zijn. Betaalt een huurder te veel? Dan mag de gemeente de <mark>verhuurder</mark> waarschuwen of een <mark>boete</mark> geven. Maar de huurder moet het probleem eerst zelf <mark>melden</mark>.</p>
+  <p>De Rekenkamer Rotterdam heeft onderzocht hoe dat gaat. Rotterdam heeft ongeveer 213.000 huurwoningen. Toch kwamen er tot maart maar 212 meldingen binnen. Bij 34 woningen ging de huur omlaag. Veel huurders weten niet waar ze hulp kunnen vragen. Anderen zijn bang voor hun verhuurder. De gemeente heeft nog geen enkele boete gegeven. Daarom is het voor slechte verhuurders nog steeds voordelig om de wet te <mark>overtreden</mark>. De gemeente zegt dat ze nu strenger gaat <mark>optreden</mark>.</p>
+  <span class="source">Lees het origineel: <a href="https://nos.nl/artikel/2636815-rekenkamer-huur-blijft-in-rotterdam-te-hoog-ondanks-aanpak-gemeente">NOS – Rekenkamer: huur blijft in Rotterdam te hoog</a></span>
+  <h3>Woorden</h3>
+  <dl>
+    <div><dt>de verhuurder</dt><dd>iemand die een huis aan een ander verhuurt – <em>landlord</em></dd></div>
+    <div><dt>de boete</dt><dd>geld dat je moet betalen als straf – <em>fine</em></dd></div>
+    <div><dt>melden</dt><dd>officieel laten weten dat er iets is – <em>to report</em></dd></div>
+    <div><dt>overtreden</dt><dd>iets doen wat volgens de regels niet mag – <em>to break (a law or rule)</em></dd></div>
+    <div><dt>optreden (tegen)</dt><dd>actie nemen om een probleem te stoppen – <em>to take action (against)</em></dd></div>
+  </dl>
+  <h3>3 vragen</h3>
+  <ol class="q">
+    <li>Wat moet een huurder eerst doen voordat de gemeente kan helpen?
+      <ul><li>a) een brief naar de rechter sturen</li><li>b) zelf melden dat de huur te hoog is</li><li>c) verhuizen naar een andere woning</li></ul></li>
+    <li>Bij hoeveel woningen ging de huur omlaag?</li>
+    <li>Noem twee redenen waarom veel huurders het niet melden.</li>
+  </ol>
+</article>
+
+<article>
+  <span class="cat">Buitenland · Israël</span>
+  <h2>Israël kiest een nieuw parlement</h2>
+  <p>Vandaag zijn er verkiezingen in Israël. Het zijn de eerste sinds de aanval van Hamas op 7 oktober 2023. Het parlement heet de Knesset en heeft 120 <mark>zetels</mark>. Voor een <mark>meerderheid</mark> heb je 61 zetels nodig. Geen partij heeft dat ooit alleen gehaald. Daarom moeten partijen altijd samen een regering maken.</p>
+  <p>Veel mensen zien de verkiezing als een test voor premier Netanyahu. Volgens de <mark>peilingen</mark> staat zijn partij Likud net achter Yashar, de nieuwe partij van oud-legerleider Gadi Eisenkot. Belangrijke onderwerpen zijn veiligheid, de macht van de rechters en de <mark>dienstplicht</mark> voor ultra-orthodoxe Joden. De <mark>stembureaus</mark> sluiten om 21.00 uur Nederlandse tijd. Daarna komen de eerste uitslagen.</p>
+  <span class="source">Lees het origineel: <a href="https://nos.nl/artikel/2636820-israel-naar-de-stembus-blijft-netanyahu-aan-de-macht">NOS – Israël naar de stembus: blijft Netanyahu aan de macht?</a></span>
+  <h3>Woorden</h3>
+  <dl>
+    <div><dt>de zetel</dt><dd>een plaats in het parlement voor één politicus – <em>seat</em></dd></div>
+    <div><dt>de meerderheid</dt><dd>meer dan de helft – <em>majority</em></dd></div>
+    <div><dt>de peiling</dt><dd>onderzoek naar wat mensen gaan stemmen – <em>(opinion) poll</em></dd></div>
+    <div><dt>de dienstplicht</dt><dd>de plicht om een tijd in het leger te werken – <em>conscription, military service</em></dd></div>
+    <div><dt>het stembureau</dt><dd>de plek waar je gaat stemmen – <em>polling station</em></dd></div>
+  </dl>
+  <h3>3 vragen</h3>
+  <ol class="q">
+    <li>Hoeveel zetels heeft een partij nodig voor een meerderheid?
+      <ul><li>a) 60</li><li>b) 61</li><li>c) 120</li></ul></li>
+    <li>Waarom moeten partijen in Israël altijd samenwerken?</li>
+    <li>Hoe laat sluiten de stembureaus in Nederlandse tijd?</li>
+  </ol>
+</article>
+
+<article>
+  <span class="cat">Wereld · Londen</span>
+  <h2>Deel van Oxford Street wordt autovrij</h2>
+  <p>Vanaf vandaag is een stuk van Oxford Street in Londen een <mark>voetgangersgebied</mark>. Het gaat om bijna een kilometer. Auto's, fietsers, taxi's en bussen mogen er niet meer komen. Ze moeten <mark>omrijden</mark> via andere straten. Oxford Street is een van de drukste winkelstraten van de wereld. Elke dag komen er ongeveer een half miljoen mensen.</p>
+  <p>Niet iedereen is blij. Bewoners zijn bang voor meer verkeer in hun eigen buurt. Ook <mark>maken</mark> mensen <mark>zich zorgen</mark> over mensen die slecht kunnen lopen. Volgend jaar komen er bomen, bankjes en twee nieuwe pleinen. Die hele <mark>verbouwing</mark> kost meer dan 133 miljoen euro. Op de eerste dag <mark>hielden</mark> niet alle fietsers <mark>zich aan</mark> de nieuwe regels.</p>
+  <span class="source">Lees het origineel: <a href="https://nos.nl/artikel/2636800-deel-van-londense-winkelstraat-oxford-street-is-voortaan-voetgangersgebied">NOS – Deel van Oxford Street is voortaan voetgangersgebied</a></span>
+  <h3>Woorden</h3>
+  <dl>
+    <div><dt>het voetgangersgebied</dt><dd>een gebied waar je alleen mag lopen – <em>pedestrian zone</em></dd></div>
+    <div><dt>omrijden</dt><dd>een langere weg nemen omdat de normale weg dicht is – <em>to take a detour</em></dd></div>
+    <div><dt>zich zorgen maken (over)</dt><dd>bang zijn dat er iets mis gaat – <em>to worry (about)</em></dd></div>
+    <div><dt>de verbouwing</dt><dd>werk om een gebouw of plek te veranderen – <em>renovation</em></dd></div>
+    <div><dt>zich houden aan</dt><dd>doen wat de regels zeggen – <em>to stick to, to obey</em></dd></div>
+  </dl>
+  <h3>3 vragen</h3>
+  <ol class="q">
+    <li>Wie mag er niet meer door dit deel van Oxford Street rijden?
+      <ul><li>a) alleen auto's</li><li>b) auto's, fietsers, taxi's en bussen</li><li>c) alleen bussen</li></ul></li>
+    <li>Waar zijn de bewoners bang voor?</li>
+    <li>Wat komt er volgend jaar in de straat?</li>
+  </ol>
+</article>
+
+<details class="answers">
+  <summary>Antwoorden bekijken</summary>
+  <h4>Huur in Rotterdam</h4>
+  <ol><li>b) zelf melden dat de huur te hoog is</li><li>Bij 34 woningen.</li><li>Ze weten niet waar ze hulp kunnen vragen, en ze zijn bang voor hun verhuurder.</li></ol>
+  <h4>Verkiezingen in Israël</h4>
+  <ol><li>b) 61</li><li>Omdat geen partij ooit alleen een meerderheid heeft gehaald.</li><li>Om 21.00 uur.</li></ol>
+  <h4>Oxford Street</h4>
+  <ol><li>b) auto's, fietsers, taxi's en bussen</li><li>Voor meer verkeer in hun eigen buurt.</li><li>Bomen, bankjes en twee nieuwe pleinen.</li></ol>
+</details>
+<!--EDITIE-END-->
+<footer>Elke ochtend nieuw · bron: NOS.nl</footer>
+</div>
+
+</body>
+</html>
